@@ -1,4 +1,4 @@
-var input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+var input = require('fs').readFileSync('/dev/stdin').toString();
 var score = Number(input);
 var result = '';
 
