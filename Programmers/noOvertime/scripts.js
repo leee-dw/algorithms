@@ -13,4 +13,4 @@ function noOvertime(no, works) {
   return sum
 }
 
-console.log(noOvertime(38, [9, 10, 10, 7, 6, 10, 7]));
+// console.log(noOvertime(38, [9, 10, 10, 7, 6, 10, 7]));
