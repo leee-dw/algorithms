@@ -10,7 +10,7 @@ function numberOfPrime(n) {
       }
     }
   }
-  return primes.length;
+  return primes;
 }
 
 console.log(numberOfPrime(10));

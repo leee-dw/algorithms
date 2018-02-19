@@ -1,31 +1,14 @@
-var input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-var str = input[1].split(' ');
-var arr = [];
-var arr2 = [];
-var res = [];
-
-for (var i = 0; i < str.length; i++) {
-  arr.push(Number(str[i]))
-  arr2.push(Number(str[i]))
+var lines = require('fs').readFileSync('/dev/stdin', 'utf8').split('\n');
+var n = Number(lines[0]);
+var numbers = lines[1].split(' ').map(Number);
+var i;
+var max_sum = -Infinity;
+var sum = 0;
+for (i = 0; i < n; i++) {
+  var number = numbers[i];
+  sum += number;
+  if (sum > max_sum) max_sum = sum;
+  if (sum < 0) sum = 0;
 }
 
-
-arr2.sort(function (a, b) {
-  return a - b;
-})
-
-for (var i = 1; i < input[0]; i++) {
-
-  res.push(arr[i] += arr[i - 1]);
-}
-console.log(res);
-
-var max = Math.max.apply(null, res);
-
-
-
-if (arr2[arr2.length - 1] > max) {
-  console.log(arr2[arr2.length - 1]);
-} else {
-  console.log(max);
-}
+console.log(max_sum);

@@ -1,12 +1,14 @@
-var input = require('fs').readFileSync('/dev/stdin').toString().split('')
+var input = require('fs').readFileSync('/dev/stdin').toString();
+var arr = [];
 
-var sum = Number(input[0]) + Number(input[1]);
-var lastNum = Number(input[1]);
-
-var result = lastNum + sum
-var second = result.toString().split('')[1]
-console.log(sum+second);
+function test(num) {
+  return Number(num.toString().split('')[0]) + Number(num.toString().split('')[1]);
+}
 
 
-
-
+  if (test(Number(input)) === input) {
+    console.log("ye");
+  } else {
+    console.log("no");
+    test(Number(input));
+  }
