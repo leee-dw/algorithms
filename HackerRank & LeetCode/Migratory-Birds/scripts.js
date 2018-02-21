@@ -1,29 +1,31 @@
 var input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+
 var arr = input[1].split(' ').map(function (elem) {
   return Number(elem);
+}).sort((a, b) => {
+  return a - b;
 });
+
 var res = {};
 var ans = [];
+var answer = [];
 
-
-
-arr.sort();
-
-for (var val in arr) {
-  var idx = arr[val];
-  res[idx] = res[idx] === undefined ? 1 : res[idx] += 1;
+for (var val of arr) {
+  res[val] = res[val] === undefined ? 1 : res[val] += 1;
 }
 
-console.log(res);
 for (var val in res) {
   ans.push(res[val]);
-  ans.sort(function (a, b) {
-    return a - b;
-  })
 };
 
-for (var val in res) {
-if (ans[ans.length - 1] === res[val]) {
-console.log(val);
-};
+console.log(ans);
+
+for (var i = 0; i < ans.length; i++) {
+  if (Math.max.apply(null, ans) === ans[i]) {
+    answer.push(i+1);
+  }
 }
+
+
+
+
