@@ -1,17 +1,15 @@
-function nextBigNumber(origin, nxt) {
-  var next = nxt || origin + 1;
-  var originBinary = origin.toString(2);
-  var originBinaryCount = (originBinary.match(/1/g) || []).length;
-  var nextBinary = next.toString(2);
-  var nextBinaryCount = (nextBinary.match(/1/g) || []).length;
-  // console.log('#', origin, next, originBinaryCount, nextBinaryCount);
-
-  if (originBinaryCount === nextBinaryCount) {
-    return next;
-  } else {
-    return nextBigNumber(origin, next + 1);
+  const condition = (n) => {
+    return n.toString(2).split('').filter((elem) => Number(elem) === 1).length;
   }
-}
 
-//아래 코드는 테스트를 위한 코드입니다.
-console.log(nextBigNumber(78));
+  const nextBigNumber = (n) => {
+    var next = n;
+    while (next++) {
+      if (next > n && condition(next) === condition(n)) {
+        return next;
+      }
+    }
+  }
+
+  //아래 코드는 테스트를 위한 코드입니다.
+  console.log(nextBigNumber(78));
