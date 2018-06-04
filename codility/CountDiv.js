@@ -1,4 +1,12 @@
 function solution(A, B, K) {
-  return A !== B ? Math.round((B - A - 1) / K) : A % K === 0 ? 1 : 0
+  let condition = A % K === 0 || B % K === 0 ? 1 : 0;
+  return A !== B ? Math.ceil((B - A) / K) + condition : A % K === 0 ? 1 : 0
+
+
 }
+
+
+
+
+
 console.log(solution(11, 13, 2));

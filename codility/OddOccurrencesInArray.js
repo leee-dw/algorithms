@@ -2,6 +2,7 @@ function solution(A) {
   var res = {};
 
   for (var idx of A) {
+    debugger;
     res[idx] = res[idx] == undefined ? 1 : res[idx] += 1;
   }
 
